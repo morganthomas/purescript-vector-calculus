@@ -11,7 +11,8 @@ class (Monoid g) <= Group g where
 class (Field f, Group v) <= VectorSpace v f | v -> f where
   scalarMult :: f -> v -> v
 
-type VectorField v f = (VectorSpace v f) => v -> f
+type ScalarField v f = (VectorSpace v f) => v -> f
+type VectorField v f = (VectorSpace v f) => v -> v
 
 main :: forall e. Eff (console :: CONSOLE | e) Unit
 main = do
