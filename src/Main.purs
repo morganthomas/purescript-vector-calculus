@@ -23,7 +23,7 @@ data LinearTransformation v f = LinearTransformation (VectorField v f)
 
 type DifferentiableVectorField v f = {
   valueAt :: VectorField v f,
-  jacobianAt :: (VectorSpace v f) => v -> LinearTransformation v f
+  jacobianAt :: v -> LinearTransformation v f
 }
 
 class (VectorSpace v f) <= InnerProductSpace v f where
