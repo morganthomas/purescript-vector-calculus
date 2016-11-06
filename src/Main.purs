@@ -14,6 +14,12 @@ class (Field f, Group v) <= VectorSpace v f | v -> f where
 type ScalarField v f = (VectorSpace v f) => v -> f
 type VectorField v f = (VectorSpace v f) => v -> v
 
+class (VectorSpace v f) <= InnerProductSpace v f where
+  innerProduct :: v -> v -> f
+
+class (VectorSpace v Number) <= HilbertSpace v where
+  hilbertSpaceDummyMethod :: v
+
 main :: forall e. Eff (console :: CONSOLE | e) Unit
 main = do
   log "Hello sailor!"
