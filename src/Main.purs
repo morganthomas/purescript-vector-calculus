@@ -14,6 +14,11 @@ class (Field f, Group v) <= VectorSpace v f | v -> f where
 type ScalarField v f = (VectorSpace v f) => v -> f
 type VectorField v f = (VectorSpace v f) => v -> v
 
+type DifferentiableScalarField v f = { 
+  valueAt :: ScalarField v f,
+  gradientAt :: VectorField v f
+}
+
 class (VectorSpace v f) <= InnerProductSpace v f where
   innerProduct :: v -> v -> f
 
