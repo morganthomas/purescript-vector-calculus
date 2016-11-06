@@ -5,10 +5,8 @@ import Control.Monad.Eff (Eff)
 import Control.Monad.Eff.Console (CONSOLE, log)
 import Data.Monoid (class Monoid)
 
-class (Monoid g) <= Group g where
-  inverse :: g -> g
-
-class (Field f, Group v) <= VectorSpace v f | v -> f where
+class (Monoid v, Field f) <= VectorSpace v f | v -> f where
+  vecNegate :: v -> v
   scalarMult :: f -> v -> v
 
 type ScalarField v f = (VectorSpace v f) => v -> f
