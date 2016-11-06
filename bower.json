@@ -8,9 +8,13 @@
   ],
   "dependencies": {
     "purescript-console": "^2.0.0",
-    "purescript-monoid": "^2.0.0"
+    "purescript-monoid": "^2.0.0",
+    "purescript-vector": "^1.1.0"
   },
   "devDependencies": {
     "purescript-psci-support": "^2.0.0"
+  },
+  "resolutions": {
+    "purescript-eff": "^2.0.0"
   }
 }
