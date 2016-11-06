@@ -19,6 +19,8 @@ type DifferentiableScalarField v f = {
   gradientAt :: VectorField v f
 }
 
+data LinearTransformation v f = LinearTransformation (VectorField v f)
+
 class (VectorSpace v f) <= InnerProductSpace v f where
   innerProduct :: v -> v -> f
 
